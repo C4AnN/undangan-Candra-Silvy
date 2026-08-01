@@ -30,7 +30,7 @@ export const guest = (() => {
      */
     const countDownDate = () => {
         // Target date: 19 Agustus 2026 pukul 08:00 WIB (UTC+7)
-        const count = new Date('2026-08-19T08:00:00+07:00').getTime();
+        const count = new Date('2026-08-19T09:00:00+07:00').getTime();
 
         /**
          * @param {number} num 
@@ -89,7 +89,7 @@ export const guest = (() => {
             const template = `<small class="mt-0 mb-1 mx-0 p-0">${util.escapeHtml(guestName?.getAttribute('data-message'))}</small><p class="m-0 p-0" style="font-size: 1.25rem">${util.escapeHtml(name)}</p>`;
             util.safeInnerHTML(div, template);
 
-            guestName?.appendChild(div);
+            guestName ?.appendChild(div);
         }
 
         const form = document.getElementById('form-name');
@@ -101,7 +101,7 @@ export const guest = (() => {
     /**
      * @returns {Promise<void>}
      */
-    const slide = async () => {
+    const slide = async() => {
         const interval = 6000;
         const slides = document.querySelectorAll('.slide-desktop');
 
@@ -109,7 +109,7 @@ export const guest = (() => {
             return;
         }
 
-        const desktopEl = document.getElementById('root')?.querySelector('.d-sm-block');
+        const desktopEl = document.getElementById('root') ?.querySelector('.d-sm-block');
         if (!desktopEl) {
             return;
         }
@@ -135,7 +135,7 @@ export const guest = (() => {
         }
 
         let run = true;
-        const nextSlide = async () => {
+        const nextSlide = async() => {
             await util.changeOpacity(slides[index], false);
             slides[index].classList.remove('slide-desktop-active');
 
@@ -153,7 +153,7 @@ export const guest = (() => {
             run = false;
         });
 
-        const loop = async () => {
+        const loop = async() => {
             if (await nextSlide()) {
                 util.timeOut(loop, interval);
             }
@@ -207,9 +207,9 @@ export const guest = (() => {
         document.getElementById('show-modal-image').addEventListener('click', (e) => {
             const abs = e.currentTarget.parentNode.querySelector('.position-absolute');
 
-            abs.classList.contains('d-none')
-                ? abs.classList.replace('d-none', 'd-flex')
-                : abs.classList.replace('d-flex', 'd-none');
+            abs.classList.contains('d-none') ?
+                abs.classList.replace('d-none', 'd-flex') :
+                abs.classList.replace('d-flex', 'd-none');
         });
     };
 
@@ -265,14 +265,14 @@ export const guest = (() => {
         const data = new URLSearchParams({
             action: 'TEMPLATE',
             text: 'The Wedding of Fernando Candra Yulianto & Silvy Rohmania Dewi',
-            dates: `${formatDate('2026-08-19 08:00')}/${formatDate('2026-08-19 11:00')}`,
+            dates: `${formatDate('2026-08-19 09:00')}/${formatDate('2026-08-19 16:00')}`,
             details: 'Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami. Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.',
             location: 'Loram Kulon, Kec. Jati, Kabupaten Kudus, Jawa Tengah 59344',
-            ctz: config?.get('tz') || 'Asia/Jakarta',
+            ctz: config ?.get('tz') || 'Asia/Jakarta',
         });
 
         url.search = data.toString();
-        document.querySelector('#home button')?.addEventListener('click', () => window.open(url, '_blank'));
+        document.querySelector('#home button') ?.addEventListener('click', () => window.open(url, '_blank'));
     };
 
     /**
@@ -299,7 +299,7 @@ export const guest = (() => {
     /**
      * @returns {Promise<void>}
      */
-    const booting = async () => {
+    const booting = async() => {
         animateSvg();
         countDownDate();
         showGuestName();
@@ -312,7 +312,7 @@ export const guest = (() => {
         }
 
         if (information.get('info')) {
-            document.getElementById('information')?.remove();
+            document.getElementById('information') ?.remove();
         }
 
         // wait until welcome screen is show.
@@ -343,14 +343,14 @@ export const guest = (() => {
 
         window.addEventListener('resize', util.debounce(slide));
         document.addEventListener('undangan.progress.done', () => booting());
-        document.addEventListener('hide.bs.modal', () => document.activeElement?.blur());
+        document.addEventListener('hide.bs.modal', () => document.activeElement ?.blur());
         document.getElementById('button-modal-download').addEventListener('click', (e) => {
             img.download(e.currentTarget.getAttribute('data-src'));
         });
 
         if (!token || token.length <= 0) {
             // Comment section already removed from HTML
-            
+
             vid.load();
             img.load();
             aud.load();
