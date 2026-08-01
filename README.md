@@ -4,10 +4,10 @@
 
 > Rabu, 19 Agustus 2026 | Loram Kulon, Kudus, Jawa Tengah
 
-![Wedding Photo](assets/images/IMG_6218.jpg)
+![Wedding Photo](assets/images/Bersama2.jpeg)
 
 ## 🌐 Live Website
-🔗 **https://c4ann.github.io/undangan-fernando-silvy**
+🔗 **https://c4ann.github.io/undangan-Candra-Sivy**
 Untuk kamu yang ingin melihat demo terlebih dahulu:
 
 [https://ulems.my.id/?to=Teman teman semua](https://ulems.my.id/?to=Teman%20teman%20semua)
