@@ -267,7 +267,7 @@ export const guest = (() => {
             text: 'The Wedding of Fernando Candra Yulianto & Silvy Rohmania Dewi',
             dates: `${formatDate('2026-08-19 09:00')}/${formatDate('2026-08-19 16:00')}`,
             details: 'Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami. Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.',
-            location: 'Loram Kulon, Kec. Jati, Kabupaten Kudus, Jawa Tengah 59344',
+            location: 'Gedung Serba Guna Hanur, Ngembal Rejo, Ngembalrejo, Kec. Bae, Kab. Kudus, Jawa Tengah',
             ctz: config ?.get('tz') || 'Asia/Jakarta',
         });
 
